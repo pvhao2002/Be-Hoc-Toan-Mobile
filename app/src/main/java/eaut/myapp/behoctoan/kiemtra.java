@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import eaut.myapp.behoctoan.util.Constant;
+
 public class kiemtra extends AppCompatActivity {
 
     private TextView questionTextView, scoreTextView, alertTextView, timeTextView, totalQuestionsTextView;
@@ -141,8 +143,8 @@ public class kiemtra extends AppCompatActivity {
             totalQuestionsTextView.setText("Câu hỏi: " + totalQuestions + "/" + questions.size());
         } else {
             Intent intent = new Intent(kiemtra.this, FinalScoreActivity.class);
-            intent.putExtra("SCORE", score);
-            intent.putExtra("TOTAL_QUESTIONS", questions.size());
+            intent.putExtra(Constant.SCORE, score);
+            intent.putExtra(Constant.TOTAL_QUESTIONS, questions.size());
             startActivity(intent);
             finish();
         }
@@ -156,8 +158,8 @@ public class kiemtra extends AppCompatActivity {
 
             public void onFinish() {
                 Intent intent = new Intent(kiemtra.this, FinalScoreActivity.class);
-                intent.putExtra("SCORE", score);
-                intent.putExtra("TOTAL_QUESTIONS", questions.size());
+                intent.putExtra(Constant.SCORE, score);
+                intent.putExtra(Constant.TOTAL_QUESTIONS, questions.size());
                 startActivity(intent);
                 finish();
             }

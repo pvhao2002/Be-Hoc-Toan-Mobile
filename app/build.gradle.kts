@@ -8,9 +8,9 @@ android {
 
     defaultConfig {
         applicationId = "eaut.myapp.behoctoan"
-        minSdk = 29
+        minSdk = 26
         targetSdk = 34
-        versionCode = 14
+        versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -36,8 +36,12 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation("com.google.code.gson:gson:2.11.0")
     implementation(libs.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    // https://mvnrepository.com/artifact/com.first.avatargenerator/AvatarImageGenerator
+    implementation("com.github.amoskorir:avatarimagegenerator:1.5.0")
 }

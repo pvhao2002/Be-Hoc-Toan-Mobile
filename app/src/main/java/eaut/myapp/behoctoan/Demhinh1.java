@@ -13,22 +13,22 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.HashMap;
+
+import eaut.myapp.behoctoan.util.Constant;
+
 public class Demhinh1 extends AppCompatActivity {
 
     private Button button1, button2, button3, button4;
     private final int correctButtonId = R.id.button1; // Định nghĩa button đúng
+    private int score = 0; // Điểm số
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demhinh1);
         ImageView btnBack = findViewById(R.id.btn_back);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnBack.setOnClickListener(v -> finish());
 
         // Ánh xạ các thành phần giao diện
         button1 = findViewById(R.id.button1);
@@ -54,6 +54,7 @@ public class Demhinh1 extends AppCompatActivity {
                     // Nếu đúng button, hiển thị dấu tích (check)
                     clickedButton.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.correct_tick, 0);
                     mediaPlayer = MediaPlayer.create(Demhinh1.this, R.raw.correct_sound); // Âm thanh đúng
+                    score++; // Tăng điểm số
                 } else {
                     // Nếu sai button, hiển thị dấu X (cross)
                     clickedButton.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.incorrect_cross, 0);
@@ -90,6 +91,7 @@ public class Demhinh1 extends AppCompatActivity {
     // Phương thức chuyển sang MainActivity4
     private void moveToNextActivity() {
         Intent intent = new Intent(Demhinh1.this, Demhinh2.class);
+        intent.putExtra(Constant.SCORE, score); // Truyền điểm số qua intent
         startActivity(intent);
     }
 }

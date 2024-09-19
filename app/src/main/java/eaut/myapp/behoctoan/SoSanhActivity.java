@@ -1,5 +1,6 @@
 package eaut.myapp.behoctoan;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
+
+import eaut.myapp.behoctoan.util.Constant;
 
 public class SoSanhActivity extends AppCompatActivity {
 
@@ -95,12 +98,9 @@ public class SoSanhActivity extends AppCompatActivity {
     }
 
     private void showResults() {
-        String resultMessage = "Điểm: " + score + "/100" +
-                "\nSố câu hỏi đã làm: " + questionsAttempted + "/100";
-        new AlertDialog.Builder(this)
-                .setTitle("Kết quả")
-                .setMessage(resultMessage)
-                .setPositiveButton("OK", (dialog, which) -> finish())
-                .show();
+        Intent intent = new Intent(SoSanhActivity.this, FinalScoreActivity.class);
+        intent.putExtra(Constant.SCORE, score); // Truyền điểm số qua Intent
+        intent.putExtra(Constant.TOTAL_QUESTIONS, this.questionsAttempted); // Truyền tổng số câu hỏi qua Intent
+        startActivity(intent);
     }
 }

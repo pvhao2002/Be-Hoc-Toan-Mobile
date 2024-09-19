@@ -13,37 +13,40 @@
         android:theme="@style/Theme.BeHocToan"
         tools:targetApi="31">
         <activity
-            android:name="eaut.myapp.behoctoan.kiemtra"
+            android:name=".ResultActivity"
             android:exported="false" />
         <activity
-            android:name="eaut.myapp.behoctoan.FinalScoreActivity"
+            android:name=".kiemtra"
             android:exported="false" />
         <activity
-            android:name="eaut.myapp.behoctoan.Demhinh5"
+            android:name=".FinalScoreActivity"
             android:exported="false" />
         <activity
-            android:name="eaut.myapp.behoctoan.Demhinh4"
+            android:name=".Demhinh5"
             android:exported="false" />
         <activity
-            android:name="eaut.myapp.behoctoan.Demhinh2"
+            android:name=".Demhinh4"
             android:exported="false" />
         <activity
-            android:name="eaut.myapp.behoctoan.Demhinh3"
+            android:name=".Demhinh2"
             android:exported="false" />
         <activity
-            android:name="eaut.myapp.behoctoan.SoSanhActivity"
+            android:name=".Demhinh3"
             android:exported="false" />
         <activity
-            android:name="eaut.myapp.behoctoan.TinhNhamActivity"
+            android:name=".SoSanhActivity"
             android:exported="false" />
         <activity
-            android:name="eaut.myapp.behoctoan.Demhinh1"
+            android:name=".TinhNhamActivity"
             android:exported="false" />
         <activity
-            android:name="eaut.myapp.behoctoan.MainActivity2"
+            android:name=".Demhinh1"
             android:exported="false" />
         <activity
-            android:name="eaut.myapp.behoctoan.MainActivity"
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

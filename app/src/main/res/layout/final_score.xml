@@ -28,7 +28,7 @@
     <TextView
         android:id="@+id/FinalScore"
         android:layout_width="202dp"
-        android:layout_height="112dp"
+        android:layout_height="70dp"
         android:layout_marginTop="344dp"
         android:layout_marginEnd="104dp"
         android:background="#028CFA"
@@ -90,5 +90,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/background2" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="Nhập tên của bạn"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FinalScore" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
