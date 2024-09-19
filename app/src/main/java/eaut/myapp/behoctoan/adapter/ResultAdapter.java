@@ -34,9 +34,9 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
     @Override
     public void onBindViewHolder(@NonNull ResultViewHolder holder, int position) {
         Result result = results.get(position);
-        holder.textViewRs.setText(result.getScore() + "/" + result.getTotalQuestions());
+        holder.textViewRs.setText((int)result.getScore() + " câu /" + result.getTotalQuestions() + " câu");
         holder.textViewDateRs.setText(dateFormat.format(result.getDate()));
-        holder.textViewNameRs.setText(result.getName());
+        holder.textViewNameRs.setText(result.getName() + " - " + result.getTestType());
     }
 
     @Override

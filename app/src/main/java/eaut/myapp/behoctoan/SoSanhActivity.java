@@ -101,6 +101,8 @@ public class SoSanhActivity extends AppCompatActivity {
         Intent intent = new Intent(SoSanhActivity.this, FinalScoreActivity.class);
         intent.putExtra(Constant.SCORE, score); // Truyền điểm số qua Intent
         intent.putExtra(Constant.TOTAL_QUESTIONS, this.questionsAttempted); // Truyền tổng số câu hỏi qua Intent
+        intent.putExtra(Constant.TEST_TYPE, "So sánh"); // Truyền tên activity hiện tại qua Intent
+
         startActivity(intent);
     }
 }

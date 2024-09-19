@@ -145,6 +145,8 @@ public class kiemtra extends AppCompatActivity {
             Intent intent = new Intent(kiemtra.this, FinalScoreActivity.class);
             intent.putExtra(Constant.SCORE, score);
             intent.putExtra(Constant.TOTAL_QUESTIONS, questions.size());
+            intent.putExtra(Constant.TEST_TYPE, "Kiểm tra"); // Truyền tên activity hiện tại qua Intent
+
             startActivity(intent);
             finish();
         }
@@ -160,6 +162,7 @@ public class kiemtra extends AppCompatActivity {
                 Intent intent = new Intent(kiemtra.this, FinalScoreActivity.class);
                 intent.putExtra(Constant.SCORE, score);
                 intent.putExtra(Constant.TOTAL_QUESTIONS, questions.size());
+                intent.putExtra(Constant.TEST_TYPE, "Kiểm tra"); // Truyền tên activity hiện tại qua Intent
                 startActivity(intent);
                 finish();
             }

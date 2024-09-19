@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import eaut.myapp.behoctoan.sqllite.DatabaseHandler;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

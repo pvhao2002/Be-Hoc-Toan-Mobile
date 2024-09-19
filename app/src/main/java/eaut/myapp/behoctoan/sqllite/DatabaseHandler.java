@@ -6,7 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import eaut.myapp.behoctoan.model.Result;
 
@@ -18,6 +20,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             + TABLE_RESULT
             + " (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "name TEXT, " +
+            "testType TEXT, " +
             "score REAL, " +
             "totalQuestions INTEGER, " +
             "correctAnswers INTEGER," +
@@ -39,12 +42,26 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public void createTable() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(CREATE_TABLE_RESULT);
+        db.close();
+    }
+
+    public void dropTable() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESULT);
+        db.execSQL(CREATE_TABLE_RESULT);
+        db.close();
+    }
+
     public void addResult(Result result) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_RESULT, null, result.toContentValues());
         db.close();
     }
 
+    // ko xai
     public Result getResult(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_RESULT, null, "id = ?", new String[]{String.valueOf(id)}, null, null, null);
@@ -72,6 +89,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             }
             db.close();
         }
-        return results;
+        return results.stream().sorted(Comparator.comparing(Result::getDate).reversed()).collect(Collectors.toList());
     }
 }

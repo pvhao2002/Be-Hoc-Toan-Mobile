@@ -87,6 +87,7 @@ public class Demhinh5 extends AppCompatActivity {
         Intent intent = new Intent(Demhinh5.this, FinalScoreActivity.class);
         intent.putExtra(Constant.SCORE, score); // Truyền điểm số qua Intent
         intent.putExtra(Constant.TOTAL_QUESTIONS, 5); // Truyền tổng số câu hỏi qua Intent
+        intent.putExtra(Constant.TEST_TYPE, "Đếm hình"); // Truyền tên activity hiện tại qua Intent
         startActivity(intent);
     }
 }

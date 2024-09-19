@@ -8,6 +8,7 @@ import java.util.Date;
 public class Result {
     private String name;
     private double score;
+    private String testType;
     private int totalQuestions;
     private int correctAnswers;
     private Date date;
@@ -19,6 +20,7 @@ public class Result {
     public Result(Cursor cursor) {
         this.name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
         this.score = cursor.getDouble(cursor.getColumnIndexOrThrow("score"));
+        this.testType = cursor.getString(cursor.getColumnIndexOrThrow("testType"));
         this.totalQuestions = cursor.getInt(cursor.getColumnIndexOrThrow("totalQuestions"));
         this.correctAnswers = cursor.getInt(cursor.getColumnIndexOrThrow("correctAnswers"));
         this.date = new Date(cursor.getString(cursor.getColumnIndexOrThrow("date")));
@@ -72,10 +74,19 @@ public class Result {
         this.date = date;
     }
 
+    public String getTestType() {
+        return testType;
+    }
+
+    public void setTestType(String testType) {
+        this.testType = testType;
+    }
+
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
         values.put("name", name);
         values.put("score", score);
+        values.put("testType", testType);
         values.put("totalQuestions", totalQuestions);
         values.put("correctAnswers", correctAnswers);
         values.put("date", date.toString());
@@ -87,6 +98,7 @@ public class Result {
         return "Result{" +
                 "name='" + name + '\'' +
                 ", score=" + score +
+                ", testType='" + testType + '\'' +
                 ", totalQuestions=" + totalQuestions +
                 ", correctAnswers=" + correctAnswers +
                 ", date=" + date +

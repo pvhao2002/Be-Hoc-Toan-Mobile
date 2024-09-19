@@ -101,6 +101,7 @@ public class TinhNhamActivity extends AppCompatActivity {
         Intent intent = new Intent(TinhNhamActivity.this, FinalScoreActivity.class);
         intent.putExtra(Constant.SCORE, score); // Truyền điểm số qua Intent
         intent.putExtra(Constant.TOTAL_QUESTIONS, this.questionsAttempted); // Truyền tổng số câu hỏi qua Intent
+        intent.putExtra(Constant.TEST_TYPE, "Tính nhẩm"); // Truyền tên activity hiện tại qua Intent
         startActivity(intent);
     }
 
